@@ -1,18 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class ="container-fluid mt-3">
+
+<!--List-->
+<div class ="container-fluid mt-3 mx-auto">
+ <div class="row mx-auto">
+<div class="col-lg-3">
+<ul class="list-group">
+  <li class="list-group-item active">Active item</li>
+  <li class="list-group-item">Item</li>
+  <li class="list-group-item disabled">Disabled item</li>
+</ul>
+</div>
+<!--List-->
+   <!--body-->
+<div id ="products" class="col-lg-9 mx-auto">
   <div class="row mx-auto">
-      {% for product in products %}
-  <div class="card mx-auto" style="width: 18rem;">
-  <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text"><b>{{product.price}}</b></p>
-    <a href="#" class="btn btn-primary">Add to Cart</a>
-  </div>
-  </div>
-   {% endfor %}
-  </div>
-  </div>
+    {% for product in products %}
+<div class="card mx-auto" style="width: 18rem;">
+<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">{{product.name}}</h5>
+  <p class="card-text"><b>{{product.price}}</b></p>
+  <a href="#" class="btn btn-primary">Add to Cart</a>
+</div>
+</div>
+ {% endfor %}
+</div>
+</div>
+</div>
+ </div>
 
 {% endblock %}
